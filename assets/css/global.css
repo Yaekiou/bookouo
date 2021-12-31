@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-background-color: #f7f1e4;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--body-background-color);
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
