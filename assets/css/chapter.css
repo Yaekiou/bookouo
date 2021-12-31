@@ -160,7 +160,7 @@ body[data-scrollable="false"] {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 16px 8px 8px;
+    padding: 16px 8px 12px;
     background-color: var(--page-opt-ui-background-color);
     transform: translateY(100%);
     transition: all 0.2s ease;
@@ -182,7 +182,7 @@ body[data-scrollable="false"] {
     width: 100%;
     font-size: 1.25rem;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
     color: #eee;
     background-color: #555;
 }
@@ -218,6 +218,12 @@ body[data-scrollable="false"] {
     color: var(--page-opt-ui-text-color);
     border-radius: 0.25rem;
     cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.opt__fontsize .current-fontsize:hover,
+.opt__fontsize .current-fontsize:active {
+    background-color: #4a4a4a;
 }
 
 .opt__reading-settings .opt__theme-switcher {
@@ -243,6 +249,12 @@ body[data-scrollable="false"] {
 
 .opt__theme-switcher button.selected {
     box-shadow: 0 0 0 2px var(--page-opt-ui-background-color), 0 0 0 4px #bbb;
+}
+
+@media screen and (max-width: 425px) {
+    .opt__theme-switcher button {
+        border-radius: 3px;
+    }
 }
 
 .catalog-container {

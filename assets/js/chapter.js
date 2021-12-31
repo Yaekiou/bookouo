@@ -140,7 +140,7 @@ catalogContainer.addEventListener("click", e => {
 // Theme Switcher
 const themeOptions = document.querySelectorAll(".opt__theme-switcher button");
 const defaultTheme = "theme-light-1";
-const textAfterSelected = "✔";
+const textAfterSelected = `Aa`;
 
 if (localStorage.getItem("readingTheme")) {
     body.className = localStorage.getItem("readingTheme");
@@ -153,10 +153,10 @@ themeOptions.forEach(btn => {
 
         themeOptions.forEach(btn => {
             btn.classList.remove("selected");
-            btn.textContent = "Aa";
+            btn.innerHTML = "Aa";
         });
         btn.classList.add("selected");
-        btn.textContent = textAfterSelected;
+        btn.innerHTML = textAfterSelected;
     })
 
     if (body.className == "") {
@@ -166,7 +166,7 @@ themeOptions.forEach(btn => {
     if (btn.classList[0] == body.className) {
         themeOptions.forEach(btn => btn.classList.remove("selected"));
         btn.classList.add("selected");
-        btn.textContent = textAfterSelected;
+        btn.innerHTML = textAfterSelected;
     }
 })
 
@@ -226,8 +226,8 @@ window.addEventListener("keyup", e => {
             body.removeAttribute("data-scrollable");
             break;
 
-        // C (Show catalogContainer)
-        case 67:
+        // L (Show catalogContainer)
+        case 76:
             if (!catalogContainer.classList.contains("show")) {
                 catalogContainer.classList.add("show");
                 body.setAttribute("data-scrollable", "false");
@@ -248,6 +248,7 @@ window.addEventListener("keyup", e => {
         case 79:
             pageOpt.classList.toggle("show");
             catalogContainer.classList.remove("show");
+            body.removeAttribute("data-scrollable");
             break;
 
         // <- (go to prev chapter)
@@ -331,10 +332,10 @@ function changeSelectedClassOnKeyEvent() {
         if (btn.classList[0] == localStorage.getItem("readingTheme")) {
             themeOptions.forEach(btn => {
                 btn.classList.remove("selected");
-                btn.textContent = "Aa";
+                btn.innerHTML = "Aa";
             });
             btn.classList.add("selected");
-            btn.textContent = textAfterSelected;
+            btn.innerHTML = textAfterSelected;
         }
     })
 }
@@ -399,3 +400,11 @@ async function createChapters() {
         "block": "center"
     });
 }
+
+window.addEventListener("load", () => {
+    const currentChapterInfo = {
+        "id": chapterInfo.id,
+        "name": chapterInfo.name
+    }
+    localStorage.setItem("chapterInfo", JSON.stringify(currentChapterInfo));
+})

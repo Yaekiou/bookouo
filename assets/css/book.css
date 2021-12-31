@@ -48,6 +48,19 @@
 	border-radius: 5px;
 }
 
+.catalog li.active {
+    animation: flash 2s ease;
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    25%, 75% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
 .catalog li a {
     display: block;
     width: 100%;
