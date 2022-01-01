@@ -120,3 +120,5 @@ searchInput.addEventListener("input", e => {
         renderBooks(bookList);
     }
 })
+
+localStorage.removeItem("chapterInfo");
