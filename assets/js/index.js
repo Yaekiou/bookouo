@@ -6,6 +6,13 @@ const bookList = [
         coverImg: "https://bookcover.yuewen.com/qdbimg/349573/1025502417/180",
         intro: "一個超憶患者的奮鬥，這是屬於納米的時代。<br>緣起於一份未來記憶。<br>取巧於零八次貸危機。<br>奠基於納米材料科技。<br>崛起於資源回收產業。",
     },
+    {
+        status: "完結",
+        bookName: "納米崛起（ttkan）",
+        author: "嶺南仨人",
+        coverImg: "https://bookcover.yuewen.com/qdbimg/349573/1025502417/180",
+        intro: "一個超憶患者的奮鬥，這是屬於納米的時代。<br>緣起於一份未來記憶。<br>取巧於零八次貸危機。<br>奠基於納米材料科技。<br>崛起於資源回收產業。",
+    },
     // {
     //     status: "完結",
     //     bookName: "超神機械師",
