@@ -100,8 +100,6 @@ function renderHTML() {
     createNvigation();
 }
 
-renderHTML();
-
 // In-Page Catalog
 const pageOpt = document.querySelector(".page-options");
 const catalogContainer = document.querySelector(".catalog-container");
@@ -402,6 +400,8 @@ async function createChapters() {
 }
 
 window.addEventListener("load", () => {
+    renderHTML();
+
     const currentChapterInfo = {
         "id": chapterInfo.id,
         "name": chapterInfo.name
