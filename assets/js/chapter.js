@@ -341,17 +341,17 @@ function changeSelectedClassOnKeyEvent() {
 }
 
 // Hide Header when scroll down
-let lastScrollTop = window.scrollY;
-const header = document.querySelector(".chapter-name");
+// let lastScrollTop = window.scrollY;
+// const header = document.querySelector(".chapter-name");
 
-window.addEventListener("scroll", () => {
-    if (lastScrollTop < window.scrollY && window.scrollY > 80) {
-        header.classList.add("scrolling");
-    } else {
-        header.classList.remove("scrolling");
-    }
-    lastScrollTop = window.scrollY;
-})
+// window.addEventListener("scroll", () => {
+//     if (lastScrollTop < window.scrollY && window.scrollY > 80) {
+//         header.classList.add("scrolling");
+//     } else {
+//         header.classList.remove("scrolling");
+//     }
+//     lastScrollTop = window.scrollY;
+// })
 
 // #page clickable when match media
 const aTags = document.querySelectorAll(".navigation a")
