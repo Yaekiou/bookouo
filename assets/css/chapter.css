@@ -310,10 +310,6 @@ body[data-scrollable="false"] {
     color: var(--catalog-panel-topbar-text-color);
 }
 
-.catalog-panel .topbar .close-btn:hover {
-    background-color: var(--chapter-panel-hover-color);
-}
-
 .catalog-panel .tools {
     margin: 10px 0;
     display: flex;
