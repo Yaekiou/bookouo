@@ -12,14 +12,7 @@ const bookList = [
         author: "嶺南仨人",
         coverImg: "https://bookcover.yuewen.com/qdbimg/349573/1025502417/180",
         intro: "一個超憶患者的奮鬥，這是屬於納米的時代。<br>緣起於一份未來記憶。<br>取巧於零八次貸危機。<br>奠基於納米材料科技。<br>崛起於資源回收產業。",
-    },
-    {
-        status: "完結",
-        bookName: "重生寡頭1991",
-        author: "懵懂的豬",
-        coverImg: "https://static.ttkan.co/cover/zhongshengguatou1991-mengdongdezhu.jpg",
-        intro: "一聲槍響，將一名經濟詐騙犯帶回到了1991年的黑龍江，轉生在了一個越境倒爺的身上，同樣是這一聲槍響，為遭逢巨變、經濟全面崩潰的俄羅斯，帶來了一位叱咤風雲的巨富寡頭。",
-    },
+    }
     // {
     //     status: "完結",
     //     bookName: "超神機械師",
