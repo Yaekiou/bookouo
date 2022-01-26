@@ -1,3 +1,7 @@
+:root {
+    --image-size: 100px;
+}
+
 img {
     display: block;
 }
@@ -51,31 +55,16 @@ img {
 }
 
 .books .book-item {
-    overflow: hidden;
     display: flex;
+    gap: 10px;
     padding: 10px 5px;
-    background-color: transparent;
     border-bottom: 1px solid #b1b1b1;
-}
-
-.book-item {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 6px;
-    gap: 0.75em;
-    border-bottom: 1px solid #b1b1b1;
-}
-
-.book-item .cover {
-    --image-size: 90px;
-    min-width: var(--image-size);
-    max-width: var(--image-size);
-    overflow: hidden;
-    border-radius: 5px;
 }
 
 .book-item .cover img {
-    width: 100%;
+    display: block;
+    width: var(--image-size);
+    border-radius: 5px;
 }
 
 .book-item .info {
@@ -86,87 +75,87 @@ img {
 
 .info header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    /* align-items: center; */
 }
 
 .info header .name {
-    overflow: hidden;
-    max-width: 350px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-}
-
-.info header .name a {
-    color: #333;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    color: #333;
 }
 
 .info header .status {
+    min-width: 40px;
+    display: grid;
+    place-items: center;
+    color: #505050;
     background-color: #e3c0c0;
-    padding: 2px 8px;
-    border-radius: 5px;
-    cursor: default;
-    min-width: 50px;
+    border-radius: 0.25rem;
+    font-size: 14px;
 }
 
 .info .author {
-    margin-top: 3px;
-    color: #808080;
-    font-size: 14px;
+    margin: 3px 0;
+    color: #767676;
+    -webkit-line-clamp: 3;
 }
 
 .info .intro {
     margin-top: auto;
-    color: #444;
-    cursor: pointer;
-    font-size: 18px;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
+    text-align: justify;
+    color: #443b3b;
+    font-size: 1.125rem;
+    cursor: pointer;
     -webkit-line-clamp: 2;
 }
 
-.intro-box {
+.ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.intro-details {
     position: fixed;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
 }
 
-.intro-box.show {
+.intro-details.show {
     opacity: 1;
-    visibility: visible;
+    pointer-events: all;
 }
 
-.intro-box .detail {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #fff5e0;
-    width: 350px;
-    max-height: 500px;
-    overflow: auto;
-    min-height: 150px;
-    padding: 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    transform: translate(-50%, -55%);
-    transition: all 0.2s ease;
-    transform-origin: center;
+.intro-details .content {
+    background-color: #f8f1e2;
+    border-radius: 0.5rem;
+    padding: 10px;
+    min-width: 350px;
+    max-width: 380px;
+    min-height: 200px;
+    max-height: 400px;
     text-align: justify;
+    overflow-y: auto;
+    font-size: 1.125rem;
+    transform: scale(0.5);
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.intro-box .detail br {
+.intro-details.show .content {
+    transform: scale(1);
+}
+
+.intro-details .content br {
     display: block;
     content: " ";
     margin: 0.75em 0;
@@ -177,17 +166,15 @@ img {
 }
 
 @media screen and (min-width: 1000px) {
-    .book-item .cover {
+    :root {
         --image-size: 120px;
     }
 
-    .info header .name a {
+    .info header .name {
         font-size: 22px;
     }
 
     .info .author {
-        margin-top: 3px;
-        color: #808080;
         font-size: 16px;
     }
 
