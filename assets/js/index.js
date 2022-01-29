@@ -56,7 +56,6 @@ renderBooks(bookList);
 
 introDetail.addEventListener("click", e => {
     if (e.target == introDetail) {
-        introDetail.querySelector(".content").innerHTML = "";
         introDetail.classList.remove("show");
         document.body.removeAttribute("style");
     }
