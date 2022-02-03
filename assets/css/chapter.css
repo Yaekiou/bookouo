@@ -366,7 +366,7 @@ body[data-scrollable="false"] {
 
 #chapter-list li {
     border-radius: 5px;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 #chapter-list li:hover,
@@ -389,12 +389,14 @@ body[data-scrollable="false"] {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 8px;
     background-color: var(--body-background-color);
     z-index: 1;
-    font-size: 1rem;
     color: #888;
     transition: transform 0.3s ease;
+}
+
+.chapter-name .container {
+    padding: 8px;
 }
 
 .chapter-name.scrolling {

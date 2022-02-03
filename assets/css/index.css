@@ -65,6 +65,7 @@ img {
     display: block;
     width: var(--image-size);
     border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
 .book-item .info {
