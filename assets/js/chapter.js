@@ -95,7 +95,6 @@ function createNvigation() {
 function renderHTML() {
     createPageOptions();
     createInPageCatalog(); 
-    createChapters();
     createHeader();
     createNvigation();
 }
@@ -400,6 +399,8 @@ async function createChapters() {
         "block": "center"
     });
 }
+
+createChapters();
 
 window.addEventListener("load", () => {
     const currentChapterInfo = {
