@@ -2,8 +2,21 @@
     --image-size: 100px;
 }
 
+body {
+    background-color: #f7f1e4;
+}
+
 img {
     display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: min(800px, 100%);
+    margin: auto;
 }
 
 .search-container {
@@ -86,6 +99,9 @@ img {
     width: 100%;
     overflow: hidden;
     -webkit-line-clamp: 1;
+}
+
+.info header .name a {
     color: #333;
 }
 

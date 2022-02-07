@@ -1,36 +1,61 @@
-.opt__header {
-    width: 100%;
-    padding: 10px 8px;
-    color: #eee;
-    background-color: #3b3b3b;
-    transition: all 0.2s ease-out;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.opt__header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+body {
+    font-family: sans-serif;
+    background-color: #f7f1e4;
 }
 
-.opt__header .opt__back-to-home {
-    color: #eee;
-    font-size: 1.75rem;
-    display: grid;
-    place-items: center;
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.opt__back-to-home.hidden {
+.hidden {
     visibility: hidden;
     pointer-events: none;
 }
 
-.opt__header .opt__book-name {
-    font-size: 1.25rem;
-    max-width: 13em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.container {
+    width: min(800px, 100%);
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    color: #eee;
+    background-color: #3b3b3b;
+    transition: transform 0.2s ease;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+header a {
+    color: inherit;
+}
+
+header .home {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+header .book-name {
+    color: inherit;
+    font-size: 1.125rem;
+    display: block;
+    max-width: 15em;
 }
 
 .catalog {
@@ -49,15 +74,15 @@
 }
 
 .catalog li.active {
-    animation: flash 2s ease;
+    animation: flash 1.5s ease;
 }
 
 @keyframes flash {
     0%, 50%, 100% {
-        background-color: rgba(0, 0, 0, 0);
+        opacity: 1;
     }
     25%, 75% {
-        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 0.2;
     }
 }
 
@@ -87,5 +112,14 @@
 
     .catalog li a {
         font-size: 18px;
+    }
+
+    @keyframes flash {
+        0%, 50%, 100% {
+            background-color: inherit;
+        }
+        25%, 75% {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
 }
