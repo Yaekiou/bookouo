@@ -322,6 +322,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 16px 8px 12px;
 }
 
 .reading-settings .open-catalog-btn {
@@ -382,10 +383,6 @@ a {
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background 0.2s ease;
-}
-
-.current-fontsize.on {
-    background-color: #4d4d4d;
 }
 
 .reading-settings .theme-switcher {

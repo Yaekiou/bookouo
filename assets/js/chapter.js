@@ -386,19 +386,15 @@ function toggleTextIndent() {
 
     if (chapterContent.classList.contains("text-indent")) {
         localStorage.setItem("text-indent", true);
-        displayFontSize.classList.add("on");
     } else {
         localStorage.removeItem("text-indent");
-        displayFontSize.classList.remove("on");
     }
 }
 
 if (localStorage.getItem("text-indent")) {
     chapterContent.classList.add("text-indent");
-    displayFontSize.classList.add("on");
 } else {
     chapterContent.classList.remove("text-indent");
-    displayFontSize.classList.remove("on");
 }
 
 const currentChapterInfo = {
