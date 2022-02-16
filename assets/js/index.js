@@ -20,6 +20,13 @@ const bookList = [
         coverImg: "https://media3.tadu.com//2021/05/14/16/41/b32724b5cd4e459d95c96221bc7d001f_276_200.jpg",
         intro: "一個穿越而來的靈魂，遊蕩在二十世紀四十年代的蘇聯，一襲內務人民委員會的製服下，蘊含着多少故事......",
     },
+    {
+        status: "連載",
+        bookName: "重生之金融巨頭",
+        author: "昭靈駟玉",
+        coverImg: "https://bookcover.yuewen.com/qdbimg/349573/1026798759/180",
+        intro: "在不見血光的資本角力之中，樸實無華的文字亦可躍為鋼盔鐵甲的戰士，了然於胸的規則亦可成為如臂揮使的十八般武器。原來這既無硝煙，也無冷兵器的戰爭也可如此精彩…<br>——<br>講人話就是一本都市賺錢爽文，講述一個來自未來的資管大佬靈魂穿越到2014年，以十萬本金入市猛幹大A作為開局，到創立「天盛資本」，最終成為全球資管規模最大的金融巨頭。<br>後面主角投資的公司也會出現一些現實中還沒有出現的近未來高科技產品，也和黑科技文沾些邊，可理解為是一本都市商業科技文。<br>符合大佬口味的請點擊收藏，放心食用"
+    }
 ]
 
 const bookContainer = document.querySelector(".books");
@@ -72,10 +79,10 @@ introDetail.addEventListener("click", e => {
 const searchInput = document.querySelector(".search-box input");
 
 searchInput.addEventListener("input", e => {
-    const keyword = e.target.value.trim();
+    const keyword = e.target.value.trim().toLocaleLowerCase();
     let filteredBooks = bookList.filter(book => {
         return (
-            book.bookName.includes(keyword) || book.author.includes(keyword)
+            book.bookName.toLocaleLowerCase().includes(keyword) || book.author.toLocaleLowerCase().includes(keyword)
         )
     })
 
