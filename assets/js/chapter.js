@@ -16,7 +16,7 @@ function renderHeader() {
 
 function renderPageOpt() {
     const newDiv = document.createElement("div");
-    newDiv.className = "page-options show";
+    newDiv.className = "page-options";
     newDiv.innerHTML = `
         <header>
             <div class="container">

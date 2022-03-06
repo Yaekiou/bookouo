@@ -389,7 +389,7 @@ a {
     display: none;
     flex: 0.45;
     padding: 3px;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     outline: none;
     background-color: #555;
     -webkit-appearance: none;
@@ -399,6 +399,7 @@ a {
     cursor: pointer;
     line-height: 1.1;
     user-select: none;
+    border: none;
 }
 
 .mobile-fontsize-menu option:disabled {
