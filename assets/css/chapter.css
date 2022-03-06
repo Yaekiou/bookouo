@@ -385,6 +385,37 @@ a {
     transition: background 0.2s ease;
 }
 
+.fontsize-setting .mobile-fontsize-menu {
+    display: none;
+    flex: 0.45;
+    padding: 3px;
+    font-size: 1.125rem;
+    outline: none;
+    background-color: #555;
+    -webkit-appearance: none;
+    text-align: center;
+    color: #eee;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1.1;
+    user-select: none;
+}
+
+.mobile-fontsize-menu option:disabled {
+    color: #bbb;
+}
+
+.fontsize-setting .indent-btn {
+    flex: 0.45;
+    display: none;
+    place-items: center;
+    background-color: #555;
+    color: #eee;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.75rem;
+}
+
 .reading-settings .theme-switcher {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -476,4 +507,21 @@ a {
 .theme-dark-1 .navigation a:hover,
 .theme-dark-2 .navigation a:hover {
     filter: brightness(1.3);
+}
+
+@media screen and (max-width: 600px) {
+    .fontsize-setting .mobile-fontsize-menu {
+        display: block;
+    }
+
+    .fontsize-setting .indent-btn {
+        display: grid;
+    }
+
+    .fontsize-setting .current-fontsize {
+        display: none;
+    }
+    .fontsize-setting button {
+        display: none;
+    }
 }

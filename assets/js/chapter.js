@@ -16,7 +16,7 @@ function renderHeader() {
 
 function renderPageOpt() {
     const newDiv = document.createElement("div");
-    newDiv.className = "page-options";
+    newDiv.className = "page-options show";
     newDiv.innerHTML = `
         <header>
             <div class="container">
@@ -38,6 +38,14 @@ function renderPageOpt() {
                     <button id="decrease" data-short-key="-">A-</button>
                     <div class="current-fontsize">20</div>
                     <button id="increase" data-short-key="=">A+</button>
+
+                    <select class="mobile-fontsize-menu">
+                        <option disabled>選擇字體大小</option>
+                    </select>
+                    <div class="indent-btn">
+                        <span class="iconify" data-icon="bi:text-indent-left"></span>
+                    </div>
+
                 </div>
                 <div class="theme-switcher">
                     <button class="theme-light-1" data-short-key="1">Aa</button>
@@ -126,12 +134,45 @@ const setFontSizeBtns = document.querySelectorAll(".fontsize-setting button");
 const decreaseFontSizeBtn = document.querySelector(".fontsize-setting #decrease");
 const increaseFontSizeBtn = document.querySelector(".fontsize-setting #increase");
 const displayFontSize = document.querySelector(".current-fontsize");
+const fontSizeSelectMenu = document.querySelector(".fontsize-setting select");
+const mobileIndentBtn = document.querySelector(".fontsize-setting .indent-btn");
 const defaultFontSize = 20;
 const maxFontSize = 40;
 const minFontSize = 16;
 let currentFontSize = defaultFontSize;
 
+
+for (let i = minFontSize; i <= maxFontSize; i++) {
+    if (i % 2 == 0) {
+        fontSizeSelectMenu.add(new Option(i, i))
+    }
+}
+
+fontSizeSelectMenu.addEventListener("change", e => {
+    currentFontSize = Number(e.target.value);
+    // fontSizeSelectMenu.options[fontSizeSelectMenu.selectedIndex].setAttribute("selected", "");
+    saveFontSize();
+})
+
+
+document.querySelectorAll(".fontsize-setting select option").forEach(opt => {
+    if (localStorage.getItem("contentFontSize")) {
+        if (opt.value == localStorage.getItem("contentFontSize")) {
+            opt.setAttribute("selected", "");
+        }
+    } else {
+        if (opt.value == defaultFontSize) {
+            opt.setAttribute("selected", "");
+        }
+    }
+})
+
+
 displayFontSize.addEventListener("click", () => {
+    toggleTextIndent();
+})
+
+mobileIndentBtn.addEventListener("click", () => {
     toggleTextIndent();
 })
 
@@ -158,6 +199,11 @@ setFontSizeBtns.forEach(btn => {
     })
 })
 
+function triggerChange(element) {
+    let changeEvent = new Event("change");
+    element.dispatchEvent(changeEvent);
+}
+
 function decreaseFontSize() {
     if (currentFontSize > minFontSize) {
         currentFontSize -= 2;
@@ -167,6 +213,8 @@ function decreaseFontSize() {
     } else {
         increaseFontSizeBtn.disabled = false;
     }
+    fontSizeSelectMenu.value = currentFontSize;
+    triggerChange(fontSizeSelectMenu);
 }
 
 function increaseFontSize() {
@@ -178,6 +226,8 @@ function increaseFontSize() {
     } else {
         decreaseFontSizeBtn.disabled = false;
     }
+    fontSizeSelectMenu.value = currentFontSize;
+    triggerChange(fontSizeSelectMenu);
 }
 
 function saveFontSize() {
@@ -357,13 +407,13 @@ window.addEventListener("keyup", e => {
 window.addEventListener("keydown", e => {
     if (!e.ctrlKey) {
         switch (e.key) {
-            case "-":
+            case decreaseFontSizeBtn.dataset.shortKey:
                 decreaseFontSize();
                 saveFontSize();
                 showFontSizeMsg();
                 break;
     
-            case "=":
+            case increaseFontSizeBtn.dataset.shortKey:
                 increaseFontSize();
                 saveFontSize();
                 showFontSizeMsg();
