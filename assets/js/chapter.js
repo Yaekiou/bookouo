@@ -39,9 +39,15 @@ function renderPageOpt() {
                     <div class="current-fontsize">20</div>
                     <button id="increase" data-short-key="=">A+</button>
 
-                    <select class="mobile-fontsize-menu">
-                        <option disabled>選擇字體大小</option>
-                    </select>
+                    <div class="fontsize-select">
+                        <select>
+                            <option disabled>選擇字體大小</option>
+                        </select>
+                        <span>
+                            <span class="iconify" data-icon="fa6-solid:angle-down"></span>
+                        </span>
+                    </div>
+
                     <div class="indent-btn">
                         <span class="iconify" data-icon="bi:text-indent-left"></span>
                     </div>
