@@ -196,6 +196,10 @@ setFontSizeBtns.forEach(btn => {
             increaseFontSize();
         }
         saveFontSize();
+
+        if (document.querySelector(".msg-container")) {
+            document.querySelector(".msg-container").textContent = currentFontSize;
+        }
     })
 })
 
